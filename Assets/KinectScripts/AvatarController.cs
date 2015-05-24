@@ -414,15 +414,19 @@ public class AvatarController : MonoBehaviour
 //		bones[26] = ClavicleRight;
 
 		var animatorComponent = GetComponent<Animator>();
-		
+	//	string name = "";
 		for (int boneIndex = 0; boneIndex < bones.Length; boneIndex++)
 		{
 			if (!boneIndex2MecanimMap.ContainsKey(boneIndex)) 
 				continue;
 			
 			//_bones[kinectInt] = ClosestMecanimBoneByKinectId(kinectId, animatorComponent);
+			//name+="["+boneIndex+"]"+animatorComponent.GetBoneTransform(boneIndex2MecanimMap[boneIndex]).gameObject.name+"\n";
+		//	Debug.Log();
 			bones[boneIndex] = animatorComponent.GetBoneTransform(boneIndex2MecanimMap[boneIndex]);
 		}
+
+		//Debug.Log (name);
 	}
 	
 	// Capture the initial rotations of the bones
